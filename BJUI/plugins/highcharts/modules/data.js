@@ -1,6 +1,7 @@
 /*
  Data plugin for Highcharts
 
+ (c) 2012-2014 Torstein Honsi
 
  License: www.highcharts.com/license
 */
@@ -12,4 +13,5 @@ error:a.error,success:function(a){var a=a.feed.entry,c,j=a.length,m=0,n=0,l;for(
 this.columns,a=b.length,c,d,e,f;a--;)for(c=b[a].length;c--;)d=b[a][c],e=parseFloat(d),f=this.trim(d),f==e?(b[a][c]=e,e>31536E6?b[a].isDatetime=!0:b[a].isNumeric=!0):(d=this.parseDate(d),a===0&&typeof d==="number"&&!isNaN(d)?(b[a][c]=d,b[a].isDatetime=!0):b[a][c]=f===""?null:f)},dateFormats:{"YYYY-mm-dd":{regex:"^([0-9]{4})-([0-9]{2})-([0-9]{2})$",parser:function(b){return Date.UTC(+b[1],b[2]-1,+b[3])}}},parseDate:function(b){var a=this.options.parseDate,c,d,e;a&&(c=a(b));if(typeof b==="string")for(d in this.dateFormats)a=
 this.dateFormats[d],(e=b.match(a.regex))&&(c=a.parser(e));return c},rowsToColumns:function(b){var a,c,d,e,f;if(b){f=[];c=b.length;for(a=0;a<c;a++){e=b[a].length;for(d=0;d<e;d++)f[d]||(f[d]=[]),f[d][a]=b[a][d]}}return f},parsed:function(){this.options.parsed&&this.options.parsed.call(this,this.columns)},complete:function(){var b=this.columns,a,c,d=this.options,e,f,i,h,g,k;if(d.complete||d.afterComplete){this.getColumnDistribution();b.length>1&&(a=b.shift(),this.headerRow===0&&a.shift(),a.isDatetime?
 c="datetime":a.isNumeric||(c="category"));for(h=0;h<b.length;h++)if(this.headerRow===0)b[h].name=b[h].shift();f=[];for(h=0,k=0;h<b.length;k++){e=j.pick(this.valueCount.individual[k],this.valueCount.global);i=[];if(h+e<=b.length)for(g=0;g<b[h].length;g++)i[g]=[a[g],b[h][g]!==void 0?b[h][g]:null],e>1&&i[g].push(b[h+1][g]!==void 0?b[h+1][g]:null),e>2&&i[g].push(b[h+2][g]!==void 0?b[h+2][g]:null),e>3&&i[g].push(b[h+3][g]!==void 0?b[h+3][g]:null),e>4&&i[g].push(b[h+4][g]!==void 0?b[h+4][g]:null);f[k]=
+{name:b[h].name,data:i};h+=e}b={xAxis:{type:c},series:f};d.complete&&d.complete(b);d.afterComplete&&d.afterComplete(b)}}});j.Data=n;j.data=function(b,a){return new n(b,a)};j.wrap(j.Chart.prototype,"init",function(b,a,c){var d=this;a&&a.data?j.data(j.extend(a.data,{afterComplete:function(e){var f,i;if(a.hasOwnProperty("series"))if(typeof a.series==="object")for(f=Math.max(a.series.length,e.series.length);f--;)i=a.series[f]||{},a.series[f]=j.merge(i,e.series[f]);else delete a.series;a=j.merge(e,a);
 b.call(d,a,c)}}),a):b.call(d,a,c)})})(Highcharts);
