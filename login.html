@@ -1,258 +1,151 @@
-
-
-
 <!DOCTYPE html>
-<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
-<!--[if !IE]><!-->
-<html lang="en">
-<!--<![endif]-->
-<!-- BEGIN HEAD -->
+<html>
 <head>
-    <meta charset="utf-8" />
-    <title>用户登录 - 健丽医美信息系统</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta content="" name="description" />
-    <meta content="" name="author" />
-    <script src="/BJUI/js/jquery-1.7.2.min.js"></script>
-    <script src="/BJUI/js/bjui-all.js"></script>
-    <link href="/BJUI/themes/css/bootstrap.min.css" rel="stylesheet">
-    <!-- core - css -->
-    <link href="/BJUI/themes/css/style.css" rel="stylesheet">
-    <link href="/BJUI/themes/blue/core.css" id="bjui-link-theme" rel="stylesheet">
-    <!-- plug - css -->
-    <link href="/BJUI/plugins/kindeditor_4.1.10/themes/default/default.css" rel="stylesheet">
-    <link href="/BJUI/plugins/colorpicker/css/bootstrap-colorpicker.min.css" rel="stylesheet">
-    <link href="/BJUI/plugins/niceValidator/jquery.validator.css" rel="stylesheet">
-    <link href="/BJUI/plugins/bootstrapSelect/bootstrap-select.css" rel="stylesheet">
-    <link href="/BJUI/themes/css/FA/css/font-awesome.min.css" rel="stylesheet">
-    <style type="text/css">
-        * {
-            font-family: "Microsoft YaHei", "Verdana", "Tahoma", "Lucida Grande", "Hiragino Sans GB", sans-serif;
-        }
-
-        body {
-            background-color: #7BC3FF; /*background: url(images/loginbg_01.jpg) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;*/
-        }
-
-        a:link {
-            color: #285e8e;
-        }
-
-        .main_box {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            margin-top: -175px;
-            margin-left: -300px;
-            padding: 30px;
-            width: 600px;
-            height: 350px;
-            background: #FAFAFA;
-            background: rgba(255, 255, 255, 0.5);
-            border: 1px #DDD solid;
-            border-radius: 5px;
-            -webkit-box-shadow: 1px 5px 8px #888888;
-            -moz-box-shadow: 1px 5px 8px #888888;
-            box-shadow: 1px 5px 8px #888888;
-        }
-
-            .main_box .setting {
-                position: absolute;
-                top: 5px;
-                right: 10px;
-                width: 10px;
-                height: 10px;
-            }
-
-                .main_box .setting a {
-                    color: #FF6600;
-                }
-
-                    .main_box .setting a:hover {
-                        color: #555;
-                    }
-
-        .login_logo {
-            margin-bottom: 20px;
-            height: 45px;
-            text-align: center;
-            font-size: 35px;
-        }
-
-            .login_logo img {
-                height: 45px;
-            }
-
-        .login_msg {
-            text-align: center;
-            font-size: 16px;
-        }
-
-        .login_form {
-            padding-top: 20px;
-            font-size: 16px;
-        }
-
-        .login_box .form-control {
-            font-family: "Microsoft YaHei", "Verdana", "Tahoma", "Lucida Grande", "Hiragino Sans GB", sans-serif;
-            display: inline-block;
-            *display: inline;
-            zoom: 1;
-            width: auto;
-            font-size: 18px;
-            height: 34px;
-            padding: 6px 12px;
-        }
-
-            .login_box .form-control.x319 {
-                width: 319px;
-            }
-
-            .login_box .form-control.x164 {
-                width: 164px;
-            }
-
-        .login_box .form-groups {
-            margin-bottom: 20px;
-        }
-
-            .login_box .form-groups label.t {
-                width: 120px;
-                text-align: right;
-                cursor: pointer;
-                font-size: 16px;
-            }
-
-            .login_box .form-groups.space {
-                padding-top: 15px;
-                border-top: 1px #FFF dotted;
-            }
-
-            .login_box .form-groups img {
-                margin-top: 1px;
-                height: 32px;
-                vertical-align: top;
-            }
-
-        .login_box .m {
-            cursor: pointer;
-        }
-
-        .bottom {
-            text-align: center;
-            font-size: 12px;
-        }
-    </style>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>系统登录</title>
+<script src="BJUI/js/jquery-1.7.2.min.js"></script>
+<script src="BJUI/js/jquery.cookie.js"></script>
+<script src="js/sha256.js"></script>
+<link href="BJUI/themes/css/bootstrap.min.css" rel="stylesheet">
+<style type="text/css">
+* {font-family: "Verdana", "Tahoma", "Lucida Grande", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;}
+body {
+    background: url(images/loginbg_01.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+a:link {color: #285e8e;}
+.main_box {
+    position: absolute; top:50%; left:50%; margin-top:-260px; margin-left: -300px; padding: 30px; width:600px; height:460px;
+    background: #FAFAFA; background: rgba(255,255,255,0.5); border: 1px #DDD solid;
+    border-radius: 5px;
+    -webkit-box-shadow: 1px 5px 8px #888888; -moz-box-shadow: 1px 5px 8px #888888; box-shadow: 1px 5px 8px #888888;
+}
+.main_box .setting {position: absolute; top: 5px; right: 10px; width: 10px; height: 10px;}
+.main_box .setting a {color: #FF6600;}
+.main_box .setting a:hover {color: #555;}
+.login_logo {margin-bottom: 20px; height: 45px; text-align: center;}
+.login_logo img {height: 45px;}
+.login_msg {text-align: center; font-size: 16px;}
+.login_form {padding-top: 20px; font-size: 16px;}
+.login_box .form-control {display: inline-block; *display: inline; zoom: 1; width: auto; font-size: 18px;}
+.login_box .form-control.x319 {width: 319px;}
+.login_box .form-control.x164 {width: 164px;}
+.login_box .form-group {margin-bottom: 20px;}
+.login_box .form-group label.t {width: 120px; text-align: right; cursor: pointer;}
+.login_box .form-group.space {padding-top: 15px; border-top: 1px #FFF dotted;}
+.login_box .form-group img {margin-top: 1px; height: 32px; vertical-align: top;}
+.login_box .m {cursor: pointer;}
+.bottom {text-align: center; font-size: 12px;}
+</style>
+<script type="text/javascript">
+var COOKIE_NAME = 'sys__username';
+$(function() {
+    choose_bg();
+	//changeCode();
+	if ($.cookie(COOKIE_NAME)){
+	    $("#j_username").val($.cookie(COOKIE_NAME));
+	    $("#j_password").focus();
+	    $("#j_remember").attr('checked', true);
+	} else {
+		$("#j_username").focus();
+	}
+	/*$("#captcha_img").click(function(){
+		changeCode();
+	});*/
+	$("#login_form").submit(function(){
+		var issubmit = true;
+		var i_index  = 0;
+		$(this).find('.in').each(function(i){
+			if ($.trim($(this).val()).length == 0) {
+				$(this).css('border', '1px #ff0000 solid');
+				issubmit = false;
+				if (i_index == 0)
+					i_index  = i;
+			}
+		});
+		if (!issubmit) {
+			$(this).find('.in').eq(i_index).focus();
+			return false;
+		}
+		var $remember = $("#j_remember");
+		if ($remember.attr('checked')) {
+			$.cookie(COOKIE_NAME, $("#j_username").val(), { path: '/', expires: 15 });
+		} else {
+			$.cookie(COOKIE_NAME, null, { path: '/' });  //删除cookie
+		}
+		$("#login_ok").attr("disabled", true).val('登陆中..');
+		var password = HMAC_SHA256_MAC($("#j_username").val(), $("#j_password").val());
+		$("#j_password").val(HMAC_SHA256_MAC($("#j_randomKey").val(), password));
+        window.location.href = 'index.html'; /*注意：生产环境时请删除此行*/
+        return false;
+	});
+});
+function genTimestamp(){
+	var time = new Date();
+	return time.getTime();
+}
+function changeCode(){
+	//$("#captcha_img").attr("src", "/captcha.jpeg?t="+genTimestamp());
+}
+function choose_bg() {
+	var bg = Math.floor(Math.random() * 9 + 1);
+	$('body').css('background-image', 'url(images/loginbg_0'+ bg +'.jpg)');
+}
+</script>
 </head>
 <body>
-    <script type="text/javascript">
-
-        $(function () {
-            $("#login_form").submit(function () {
-                var issubmit = true;
-                var i_index = 0;
-                $(this).find('.in').each(function (i) {
-                    if ($.trim($(this).val()).length == 0) {
-                        $(this).css('border', '1px #ff0000 solid');
-                        issubmit = false;
-                        if (i_index == 0)
-                            i_index = i;
-                    }
-                });
-                if (!issubmit) {
-                    $(this).find('.in').eq(i_index).focus();
-                    return false;
-                }
-                //var $remember = $("#j_remember");
-                //if ($remember.attr('checked')) {
-                //    $.cookie(COOKIE_NAME, $("#j_username").val(), { path: '/', expires: 15 });
-                //} else {
-                //    $.cookie(COOKIE_NAME, null, { path: '/' }); //删除cookie
-                //}
-                $("#login_ok").attr("disabled", true).val('登录中..');
-                //var password = HMAC_SHA256_MAC($("#j_username").val(), $("#j_password").val());
-                //$("#j_password").val(HMAC_SHA256_MAC($("#j_randomKey").val(), password));
-                $.ajax({
-                    type: "post",
-                    url: "/Account/Auth/Login",
-                    data: { "username": $("#j_username").val(), "password": $("#j_password").val() },
-                    success: function (data) {
-                        // login error
-                        if (data.statusCode == "300") {
-                            $(this).alertmsg("error", data.message);
-                            $("#login_ok").attr("disabled", false).val('登录');
-                            return;
-                        }
-
-                        // trail error
-                        if (data.statusCode == "201") {
-                            $(this).alertmsg("error", data.message, {
-                                okCall: function () {
-                                    location.href = "/";
-                                }
-                            });
-                            return;
-                        }
-
-                        location.href = "/";
-                        return;
-                    }
-                });
-                return false;
-            });
-        });
-        $(function () {
-
-            BJUI.init({
-                JSPATH: "/BJUI/", //[可选]框架路径
-                PLUGINPATH: "/BJUI/plugins/", //[可选]插件路径
-                loginInfo: { url: 'login_timeout.html', title: '登录', width: 400, height: 200 }, // 会话超时后弹出登录对话框
-                statusCode: { ok: 200, error: 300, timeout: 301, confirm: 201 }, //[可选]
-                ajaxTimeout: 50000, //[可选]全局Ajax请求超时时间(毫秒)
-                pageInfo: { total: 'total', pageCurrent: 'pageCurrent', pageSize: 'pageSize', orderField: 'orderField', orderDirection: 'orderDirection' }, //[可选]分页参数
-                alertMsg: { displayPosition: 'topcenter', displayMode: 'slide', alertTimeout: 3000 }, //[可选]信息提示的显示位置，显隐方式，及[info/correct]方式时自动关闭延时(毫秒)
-                keys: { statusCode: 'statusCode', message: 'message' }, //[可选]
-                ui: {
-                    windowWidth: 1200, //框架显示宽度，0=100%宽，> 600为则居中显示
-                    showSlidebar: false, //[可选]左侧导航栏锁定/隐藏
-                    clientPaging: true, //[可选]是否在客户端响应分页及排序参数
-                    overwriteHomeTab: false //[可选]当打开一个未定义id的navtab时，是否可以覆盖主navtab(我的主页)
-                },
-                debug: true, // [可选]调试模式 [true|false，默认false]
-                theme: 'sky' // 若有Cookie['bjui_theme'],优先选择Cookie['bjui_theme']。皮肤[五种皮肤:default, orange, purple, blue, red, green]
-            });
-        });
-    </script>
-    <!--[if lte IE 7]> <style type="text/css">#errorie {position: fixed;top: 0;z-index: 100000;height: 30px;background: #FCF8E3;}#errorie div {width: 900px;margin: 0 auto;line-height: 30px;color: orange;font-size: 14px;text-align: center;}#errorie div a {color: #459f79;font-size: 14px;}#errorie div a:hover { text-decoration: underline; } </style> <div id="errorie"><div>您还在使用老掉牙的IE，请升级您的浏览器到 IE8以上版本 <a target="_blank" href="http://windows.microsoft.com/zh-cn/internet-explorer/ie-8-worldwide-languages">点击升级</a>&nbsp;&nbsp;强烈建议您更改换浏览器：<a href="http://down.tech.sina.com.cn/content/40975.html" target="_blank">谷歌 Chrome</a></div></div> <![endif]-->
-    <div class="main_box">
-
-        <div class="login_box">
-            <div class="login_logo"> 健丽医美信息系统 </div> <!-- <c:if test="${!empty message}"> <div class="login_msg"> <font color="red">${message }</font> </div> </c:if> -->
-            <div class="login_form">
-                <input type="hidden" value="${randomKey }" id="j_randomKey" />
-                <form action="/Account/Auth/Login" id="login_form" method="post">
-                    <input type="hidden" name="jfinal_token" value="${jfinal_token }" />
-                    <div class="form-groups">
-                        <label for="j_username" class="t">用户名：</label> <input id="j_username" value="" placeholder="用户名" name="username" type="text" class="form-control x319 in" autocomplete="off">
-                    </div>
-                    <div class="form-groups">
-                        <label for="j_password" class="t">密 码：</label> <input id="j_password" value="" placeholder="密码" name="password" type="password" class="form-control x319 in">
-                    </div>
-
-                        <div class="form-groups space">
-                            <label class="t"></label>
-                            <input type="submit" id="login_ok" value="&nbsp;登&nbsp;录&nbsp;" class="btn btn-primary btn-lg">&nbsp;&nbsp;&nbsp;&nbsp;
-                            <input type="reset" value="&nbsp;重&nbsp;置&nbsp;" class="btn btn-default btn-lg">
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="bottom">
-                Copyright &copy; 2017 HRP by jlqyd.COM <a href="http://www.jlqyd.com">健丽医美</a>
-            </div>
+<!--[if lte IE 7]>
+<style type="text/css">
+#errorie {position: fixed; top: 0; z-index: 100000; height: 30px; background: #FCF8E3;}
+#errorie div {width: 900px; margin: 0 auto; line-height: 30px; color: orange; font-size: 14px; text-align: center;}
+#errorie div a {color: #459f79;font-size: 14px;}
+#errorie div a:hover {text-decoration: underline;}
+</style>
+<div id="errorie"><div>您还在使用老掉牙的IE，请升级您的浏览器到 IE8以上版本 <a target="_blank" href="http://windows.microsoft.com/zh-cn/internet-explorer/ie-8-worldwide-languages">点击升级</a>&nbsp;&nbsp;强烈建议您更改换浏览器：<a href="http://down.tech.sina.com.cn/content/40975.html" target="_blank">谷歌 Chrome</a></div></div>
+<![endif]-->
+<div class="main_box">
+    <div class="setting"><a href="javascript:;" onclick="choose_bg();" title="更换背景"><span class="glyphicon glyphicon-th-large"></span></a></div>
+	<div class="login_box">
+        <div class="login_logo">
+            <img src="images/logo.png" >
         </div>
-
-    </body>
-    <!-- END BODY -->
+        <!--
+		<c:if test="${!empty message}">
+			<div class="login_msg">
+	      		<font color="red">${message }</font>
+	    	</div>
+	    </c:if>
+        -->
+        <div class="login_form">
+            <input type="hidden" value="${randomKey }" id="j_randomKey" />
+    		<form action="index.html" id="login_form" method="post">
+                <input type="hidden" name="jfinal_token" value="${jfinal_token }" />
+    			<div class="form-group">
+    				<label for="j_username" class="t">用户名：</label> <input id="j_username" value="" name="username" type="text" class="form-control x319 in" autocomplete="off">
+    			</div>
+    			<div class="form-group">
+    				<label for="j_password" class="t">密　码：</label> <input id="j_password" value="" name="passwordhash" type="password" class="form-control x319 in">
+    			</div>
+    			<div class="form-group">
+    				<label for="j_captcha" class="t">验证码：</label> <input id="j_captcha" name="j_captcha" type="text" class="form-control x164 in">
+    				<img id="captcha_img" alt="点击更换" title="点击更换" src="images/captcha.jpeg" class="m">
+    			</div>
+    			<div class="form-group">
+                    <label class="t"></label>
+                    <label for="j_remember" class="m"><input id="j_remember" type="checkbox" value="true">&nbsp;记住登陆账号!</label>
+    			</div>
+    			<div class="form-group space">
+                    <label class="t"></label>　　　
+    				<input type="submit" id="login_ok" value="&nbsp;登&nbsp;录&nbsp;" class="btn btn-primary btn-lg">&nbsp;&nbsp;&nbsp;&nbsp;
+    				<input type="reset" value="&nbsp;重&nbsp;置&nbsp;" class="btn btn-default btn-lg">
+    			</div>
+    		</form>
+        </div>
+	</div>
+	<div class="bottom">Copyright &copy; 2013 - 2014 <a href="#">B-JUI 前端框架 - 系统登陆</a></div>
+</div>
+</body>
 </html>
