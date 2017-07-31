@@ -107,7 +107,8 @@ $(function() {
         alertMsg     : {displayPosition:'topcenter', displayMode:'slide', alertTimeout:3000}, //[可选]信息提示的显示位置，显隐方式，及[info/correct]方式时自动关闭延时(毫秒)
         keys         : {statusCode:'statusCode', message:'message'}, //[可选]
         ui           : {
-                         windowWidth      : 0, //框架显示宽度，0=100%宽，> 600为则居中显示
+                         windowWidth      : 1200,    //框架可视宽度，0=100%宽，> 600为则居中显示
+                         //showSlidebar: false, //[可选]左侧导航栏锁定/隐藏
                          showSlidebar     : true, //[可选]左侧导航栏锁定/隐藏
                          clientPaging     : true, //[可选]是否在客户端响应分页及排序参数
                          overwriteHomeTab : false //[可选]当打开一个未定义id的navtab时，是否可以覆盖主navtab(我的主页)
@@ -133,14 +134,14 @@ $(function() {
                 if (!$a.hasClass('collapsed')) $heading.addClass('active')
             })
         })
-        
-    $(document).on('click', 'ul.menu-items li > a', function(e) {
-        var $a = $(this), $li = $a.parent(), options = $a.data('options').toObj(), $children = $li.find('> .menu-items-children')
+    
+    $(document).on('click', 'ul.menu-items > li > a', function(e) {
+        var $a = $(this), $li = $a.parent(), options = $a.data('options').toObj()
         var onClose = function() {
             $li.removeClass('active')
         }
         var onSwitch = function() {
-            $('#bjui-accordionmenu').find('ul.menu-items li').removeClass('switch')
+            $('#bjui-accordionmenu').find('ul.menu-items > li').removeClass('switch')
             $li.addClass('switch')
         }
         
@@ -155,9 +156,6 @@ $(function() {
                 $a.navtab(options)
             else
                 $a.dialog(options)
-        }
-        if ($children.length) {
-            $li.toggleClass('open')
         }
         
         e.preventDefault()
@@ -194,6 +192,14 @@ function MainMenuClick(event, treeId, treeNode) {
 <link type="text/css" rel="stylesheet" href="/js/syntaxhighlighter-2.1.382/styles/shThemeEclipse.css"/>
 <script type="text/javascript" src="/js/syntaxhighlighter-2.1.382/scripts/brush.js"></script>
 <link href="doc/doc.css" rel="stylesheet">
+
+<!-- 自定义css -->
+<link href="/BJUI/themes/css/custom.css" rel="stylesheet">
+<!-- 自定义css -->
+<!--自定义js-->
+<script type="text/javascript" src="/js/custom.js"></script>
+<!--自定义js-->
+
 <script type="text/javascript">
 $(function(){
     SyntaxHighlighter.config.clipboardSwf = '/js/syntaxhighlighter-2.1.382/scripts/clipboard.swf'
@@ -203,12 +209,6 @@ $(function(){
 })
 </script>
 <!-- for doc end -->
-<!-- 自定义css -->
-<link href="/BJUI/themes/css/custom.css" rel="stylesheet">
-<!-- 自定义css -->
-<!--自定义js-->
-<script type="text/javascript" src="/js/custom.js"></script>
-<!--自定义js-->
 </head>
 <body>
     <!--[if lte IE 7]>
@@ -247,7 +247,7 @@ $(function(){
         <div id="bjui-hnav">
             <button type="button" class="btn-default bjui-hnav-more-left" title="导航菜单左移"><i class="fa fa-angle-double-left"></i></button>
             <div id="bjui-hnav-navbar-box">
-            	<!-- 导航结束 -->
+                <!-- 导航结束 -->
                 <ul id="bjui-hnav-navbar">
                 	<!--导航整理-->
                 	<li>
@@ -2220,18 +2220,19 @@ $(function(){
                 	<!--导航整理--> 
                 </ul>
                 <!-- 导航结束 -->
+
             </div>
             <button type="button" class="btn-default bjui-hnav-more-right" title="导航菜单右移"><i class="fa fa-angle-double-right"></i></button>
         </div>
     </header>
-    <div id="bjui-container" class="clearfix">
+    <div id="bjui-container">
         <div id="bjui-leftside">
             <div id="bjui-sidebar-s">
                 <div class="collapse"></div>
             </div>
             <div id="bjui-sidebar">
                 <div class="toggleCollapse"><h2><i class="fa fa-bars"></i> 导航栏 <i class="fa fa-bars"></i></h2><a href="javascript:;" class="lock"><i class="fa fa-lock"></i></a></div>
-                <div class="panel-group panel-main" data-toggle="accordion" id="bjui-accordionmenu">
+                <div class="panel-group panel-main" data-toggle="accordion" id="bjui-accordionmenu" data-heightbox="#bjui-sidebar" data-offsety="26">
                 </div>
             </div>
         </div>
@@ -2239,7 +2240,7 @@ $(function(){
             <div class="tabsPageHeader">
                 <div class="tabsPageHeaderContent">
                     <ul class="navtab-tab nav nav-tabs">
-                        <li data-url="index_layout.html" data-faicon="home"><a href="javascript:;"><span><i class="fa fa-home"></i> #maintab#</span></a></li>
+                        <li data-url="index_layout.html"><a href="javascript:;"><span><i class="fa fa-home"></i> #maintab#</span></a></li>
                     </ul>
                 </div>
                 <div class="tabsLeft"><i class="fa fa-angle-double-left"></i></div>
@@ -2259,7 +2260,7 @@ $(function(){
         </div>
     </div>
     <footer id="bjui-footer">
-    	Copyright &copy; 2013 - 2015　<a href="http://www.jlqyd.com/" target="_blank">健丽医美信息管理系统</a>
+        Copyright &copy; 2013 - 2015　<a href="http://www.jlqyd.com/" target="_blank">健丽医美信息管理系统</a>
     </footer>
     </div>
 </body>

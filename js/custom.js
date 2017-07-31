@@ -1,0 +1,3 @@
+function slidebarclick(obj) {
+    
+}
