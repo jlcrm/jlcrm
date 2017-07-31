@@ -10,7 +10,7 @@
 <style type="text/css">
 * {font-family: "Verdana", "Tahoma", "Lucida Grande", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;}
 body {
-    background: url(images/loginbg_01.jpg) no-repeat center center fixed;
+    background: #7BC3FF/*url(images/loginbg_01.jpg) no-repeat center center fixed*/;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -40,10 +40,12 @@ a:link {color: #285e8e;}
 .login_box .m {cursor: pointer;}
 .bottom {text-align: center; font-size: 12px;}
 </style>
+<!-- 自定义css -->
+<link href="/BJUI/themes/css/custom.css" rel="stylesheet">
+<!-- 自定义css -->
 <script type="text/javascript">
 var COOKIE_NAME = 'sys__username';
 $(function() {
-    choose_bg();
 	//changeCode();
 	if ($.cookie(COOKIE_NAME)){
 	    $("#j_username").val($.cookie(COOKIE_NAME));
@@ -89,11 +91,7 @@ function genTimestamp(){
 }
 function changeCode(){
 	//$("#captcha_img").attr("src", "/captcha.jpeg?t="+genTimestamp());
-}
-function choose_bg() {
-	var bg = Math.floor(Math.random() * 9 + 1);
-	$('body').css('background-image', 'url(images/loginbg_0'+ bg +'.jpg)');
-}
+} 
 </script>
 </head>
 <body>
@@ -107,10 +105,9 @@ function choose_bg() {
 <div id="errorie"><div>您还在使用老掉牙的IE，请升级您的浏览器到 IE8以上版本 <a target="_blank" href="http://windows.microsoft.com/zh-cn/internet-explorer/ie-8-worldwide-languages">点击升级</a>&nbsp;&nbsp;强烈建议您更改换浏览器：<a href="http://down.tech.sina.com.cn/content/40975.html" target="_blank">谷歌 Chrome</a></div></div>
 <![endif]-->
 <div class="main_box">
-    <div class="setting"><a href="javascript:;" onclick="choose_bg();" title="更换背景"><span class="glyphicon glyphicon-th-large"></span></a></div>
 	<div class="login_box">
         <div class="login_logo">
-            <img src="images/logo.png" >
+        	健丽医美信息管理系统
         </div>
         <!--
 		<c:if test="${!empty message}">
@@ -128,14 +125,6 @@ function choose_bg() {
     			</div>
     			<div class="form-group">
     				<label for="j_password" class="t">密　码：</label> <input id="j_password" value="" name="passwordhash" type="password" class="form-control x319 in">
-    			</div>
-    			<div class="form-group">
-    				<label for="j_captcha" class="t">验证码：</label> <input id="j_captcha" name="j_captcha" type="text" class="form-control x164 in">
-    				<img id="captcha_img" alt="点击更换" title="点击更换" src="images/captcha.jpeg" class="m">
-    			</div>
-    			<div class="form-group">
-                    <label class="t"></label>
-                    <label for="j_remember" class="m"><input id="j_remember" type="checkbox" value="true">&nbsp;记住登陆账号!</label>
     			</div>
     			<div class="form-group space">
                     <label class="t"></label>　　　
