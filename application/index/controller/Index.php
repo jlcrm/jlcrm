@@ -10,11 +10,8 @@ class Index
     {
     	return view();
     }
-    public function m()
+    public function menu()
     {
-    	echo "12313";
-    	for($i=0;$i++;$i<100000000000000000){
-    		echo $i*50/35;
-    	}
+    	return view();
     }
 }

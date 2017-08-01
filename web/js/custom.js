@@ -1,7 +1,7 @@
 function slidebarclick(obj) {	
     $(this).bjuiajax('refreshLayout', {
         target: '#home-menu-list',
-        url: '/index/m',
+        url: '/index/menu',
         type: 'POST',
         data: { menuGroupId: obj }
     });

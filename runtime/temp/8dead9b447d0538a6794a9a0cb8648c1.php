@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:64:"D:\wamp\www\jlcrm\web/../application/index\view\index\index.html";i:1501584335;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh">
 <head>
