@@ -12,6 +12,9 @@ class Index
     }
     public function m()
     {
-    	echo "傻逼二号";
+    	echo "12313";
+    	for($i=0;$i++;$i<100000000000000000){
+    		echo $i*50/35;
+    	}
     }
 }
