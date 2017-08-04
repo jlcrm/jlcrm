@@ -1,89 +1,130 @@
-<style>.menulihover { border-left: 3px solid rgb(55, 131, 192); margin: 5px; background-color: #CBE4F9; line-height: 24px; font-size: 14px; text-indent: 18px; } .menulihover:hover { background: #ffb584; }</style>
-<div style="clear: both;"></div>
-<div style="width: 33%;  padding: 10px; float: left">
-    <div style="height: 100%;">
-        <fieldset style="min-height: 250px; background: #e0f0fb;">
-            <legend style="font-size: 18px;">网电预约</legend>
-            <div id="layout-01" style="height: 90%; " class="bjui-layout">
-                <ul class="dl-horizontal unstyled">
-                    <a href="/Reservation/TempCustInfo/Indexorgid" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'ReservationTempCustInfoIndex', faicon:'fa-plus-square'}">
-                        <li class="menulihover">创建预约单</li></a>
-                    <a href="/Reservation/ConsultingQuantity/Index" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'ConsultingQuantityIndex', faicon:'fa-plus-square'}">
-                        <li class="menulihover">咨询量录入</li></a>
-                    <a href="/Reservation/ConsultingQuantity/CompanyIndex" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'ConsultingQuantityCompanyIndex', faicon:'fa-'}">
-                        <li class="menulihover">咨询量查询</li></a>
-                </ul>
+
+<script type="text/javascript">
+   /* (function () {
+        if (window.location.pathname && window.location.pathname !== '/') {
+            window.location.replace('http://' + window.location.host + '#' + window.location.pathname.substring(1));
+        }
+    })();*/
+</script>
+
+
+<style>
+    .menulihover {
+        border-left: 3px solid rgb(55, 131, 192);
+        margin: 5px;
+        background-color: #CBE4F9;
+        line-height: 24px;
+        font-size: 14px;
+        text-indent: 18px;
+    }
+
+        .menulihover:hover {
+            background: #ffb584;
+        }
+</style>
+
+ <div style="clear: both;"> </div>            <div style="width: 33%;  padding: 10px; float: left">
+                <div style="height: 100%;">
+                    <fieldset style="min-height: 250px; background: #e0f0fb;">
+                        <legend style="font-size: 18px;">接待管理</legend>
+                        <div id="layout-01" style="height: 90%; " class="bjui-layout">
+                            <ul class="dl-horizontal unstyled">
+                                            <a href="/Field/ReceptionNote/Index" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'FieldReceptionNoteIndex', faicon:'fa-plus-square'}"><li class="menulihover">接待分诊</li></a>
+                                            <a href="/Field/ReceptionSearch/Index" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'FieldReceptionSearchIndex', faicon:'fa-plus-square'}"><li class="menulihover">接诊列表</li></a>
+                                            <a href="/Field/CheckInfo/Index" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'FieldCheckInfoIndex', faicon:'fa-plus-square'}"><li class="menulihover">资料核对</li></a>
+                                            <a href="/Field/OutpatientOrder/Index" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'OutpatientOrderIndex', faicon:'fa-'}"><li class="menulihover">门诊预约</li></a>
+                            </ul>
+                        </div>
+                    </fieldset>
+                </div>
             </div>
-        </fieldset>
-    </div>
-</div>
-<div style="width: 33%;  padding: 10px; float: left">
-    <div style="height: 100%;">
-        <fieldset style="min-height: 250px; background: #e0f0fb;">
-            <legend style="font-size: 18px;">正式客户预约</legend>
-            <div id="layout-01" style="height: 90%; " class="bjui-layout">
-                <ul class="dl-horizontal unstyled">
-                    <a href="/Reservation/CustSearch/Index" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'ReservationCustSearchIndex', faicon:'fa-search'}">
-                        <li class="menulihover">正式客户二次预约</li></a>
-                    <a href="/Reservation/CustReservation/Index" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'ReservationCustReservationIndex', faicon:'fa-files-o'}">
-                        <li class="menulihover">正式客户预约单</li></a>
-                    <a href="/Reservation/CustReservation/CustIndex" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'CustReservation', faicon:'fa-files-o'}">
-                        <li class="menulihover">正式客户预约单（个人）</li></a>
-                    <a href="/Field/CustArrive/Index" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'FieldCustArriveIndex', faicon:'fa-plus-square'}">
-                        <li class="menulihover">正式客户来院查询</li></a>
-                    <a href="/Field/CustArrive/MyIndex" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'CustArriveMyIndex', faicon:'fa-'}">
-                        <li class="menulihover">正式客户来院查询(个人)</li></a>
-                </ul>
+            <div style="width: 33%;  padding: 10px; float: left">
+                <div style="height: 100%;">
+                    <fieldset style="min-height: 250px; background: #e0f0fb;">
+                        <legend style="font-size: 18px;">咨询开单</legend>
+                        <div id="layout-01" style="height: 90%; " class="bjui-layout">
+                            <ul class="dl-horizontal unstyled">
+                                            <a href="/Field/ChargeBill/Index" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'FieldChargeBillIndex', faicon:'fa-plus-square'}"><li class="menulihover">开单管理</li></a>
+                                            <a href="/Field/CompanyChargeBill/Index" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'CompanyChargeBillIndex', faicon:'fa-'}"><li class="menulihover">开单管理（公司）</li></a>
+                                            <a href="/Field/ChargeBillOther/Index" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'FieldChargeBillOtherIndex', faicon:'fa-plus-square'}"><li class="menulihover">其它开单</li></a>
+                                            <a href="/Field/ChargeBillSearch/Index" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'FieldChargeBillSearchIndex', faicon:'fa-plus-square'}"><li class="menulihover">我的收费单</li></a>
+                                            <a href="/Field/ChargeBillSearch/CompanyIndex" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'FieldChargeBillSearchCompanyIndex', faicon:'fa-plus-square'}"><li class="menulihover">我的收费单（公司）</li></a>
+                                            <a href="/Field/MyReceptionNote/Index" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'MyReceptionNoteIndex', faicon:'fa-plus-square'}"><li class="menulihover">我的接诊信息</li></a>
+                                            <a href="/Field/MyReceptionNote/CompanyIndex" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'FieldMyReceptionNoteCompanyIndex', faicon:'fa-plus-square'}"><li class="menulihover">我的接诊信息（公司）</li></a>
+                                            <a href="/Field/Repay/Index" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'FieldRepayIndex', faicon:'fa-reply'}"><li class="menulihover">还款管理</li></a>
+                                            <a href="/Field/Repay/CompanyIndex" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'FieldRepayCompanyIndex', faicon:'fa-reply'}"><li class="menulihover">还款管理（公司）</li></a>
+                                            <a href="/Field/ReceptionNoteCheck/Index" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'ReceptionNoteCheckIndex', faicon:'fa-list-alt'}"><li class="menulihover">接诊表检查</li></a>
+                                            <a href="/Field/ReceptionNoteCheck/CompanyIndex" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'FieldReceptionNoteCheckCompanyIndex', faicon:'fa-list-alt'}"><li class="menulihover">接诊表检查（公司）</li></a>
+                                            <a href="/Field/CustToRequest/Index" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'FieldCustToRequestIndex', faicon:'fa-search'}"><li class="menulihover">客户需求查询</li></a>
+                                            <a href="/Field/CustToRequest/CompanyIndex" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'FieldCustToRequestCompanyIndex', faicon:'fa-search'}"><li class="menulihover">客户需求查询（公司）</li></a>
+                            </ul>
+                        </div>
+                    </fieldset>
+                </div>
             </div>
-        </fieldset>
-    </div>
-</div>
-<div style="width: 33%;  padding: 10px; float: left">
-    <div style="height: 100%;">
-        <fieldset style="min-height: 250px; background: #e0f0fb;">
-            <legend style="font-size: 18px;">网电预约查询</legend>
-            <div id="layout-01" style="height: 90%; " class="bjui-layout">
-                <ul class="dl-horizontal unstyled">
-                    <a href="/Reservation/TempCustSearch/Index" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'ReservationTempCustSearchIndex', faicon:'fa-search'}">
-                        <li class="menulihover">临客查询（个人）</li></a>
-                    <a href="/Reservation/TempCustSearch/RecallIndex" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'ReservationTempCustSearchRecallIndex', faicon:'fa-search'}">
-                        <li class="menulihover">临客查询（回访）</li></a>
-                    <a href="/Reservation/TempCustSearch/CompayIndex" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'ReservationTempCustSearchIndexs', faicon:'fa-search'}">
-                        <li class="menulihover">临客查询（公司）</li></a>
-                    <a href="/Reservation/ToHospital/Index" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'ReservationToHospitalIndex', faicon:'fa-search'}">
-                        <li class="menulihover">来院查询（个人）</li></a>
-                    <a href="/Reservation/ToHospital/RecallIndex" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'ReservationToHospitalRecallIndex', faicon:'fa-search'}">
-                        <li class="menulihover">来院查询（回访）</li></a>
-                    <a href="/Reservation/ToHospital/CompayIndex" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'ReservationToHospitalCompayIndexs', faicon:'fa-search'}">
-                        <li class="menulihover">来院查询（公司）</li></a>
-                    <a href="/Reservation/ReservationSearch/Index" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'ReservationReservationSearchIndex', faicon:'fa-search'}">
-                        <li class="menulihover">预约单查询（个人）</li></a>
-                    <a href="/Reservation/ReservationSearch/RecallIndex" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'ReservationReservationSearchRecallIndex', faicon:'fa-search'}">
-                        <li class="menulihover">预约单查询（回访）</li></a>
-                    <a href="/Reservation/ReservationSearch/CompayIndex" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'ReservationReservationSearchCompayIndexs', faicon:'fa-search'}">
-                        <li class="menulihover">预约单查询（公司）</li></a>
-                    <a href="/Reservation/TempCustUnarrive/ConsultantIndex" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'ReservationTempCustUnarriveConsultantIndex', faicon:'fa-'}">
-                        <li class="menulihover">临时客户预约未来院查询(个人)</li></a>
-                    <a href="/Reservation/TempCustUnarrive/PlanRecallEmpIndex" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'ReservationTempCustUnarrivePlanRecallEmpIndex', faicon:'fa-'}">
-                        <li class="menulihover">临时客户预约未来院查询(回访)</li></a>
-                    <a href="/Reservation/TempCustUnarrive/Index" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'ReservationTempCustUnarriveIndex', faicon:'fa-plus-square'}">
-                        <li class="menulihover">临时客户预约未来院查询(公司)</li></a>
-                </ul>
+            <div style="width: 33%;  padding: 10px; float: left">
+                <div style="height: 100%;">
+                    <fieldset style="min-height: 250px; background: #e0f0fb;">
+                        <legend style="font-size: 18px;">客户管理(咨询师)</legend>
+                        <div id="layout-01" style="height: 90%; " class="bjui-layout">
+                            <ul class="dl-horizontal unstyled">
+                                            <a href="/Manage/MyCust/Index" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'MyCustIndex', faicon:'fa-user'}"><li class="menulihover">我的客户</li></a>
+                                            <a href="/Manage/MyPremoneyCust/Index" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'MyPremoneyCustIndex', faicon:'fa-user'}"><li class="menulihover">我的预约金客户</li></a>
+                                            <a href="/ReturnCall/MyDebtCust/Index" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'MyDebtCustIndex', faicon:'fa-user'}"><li class="menulihover">我的欠款客户</li></a>
+                                            <a href="/Field/MyWaitCareCust/Index" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'MyWaitCareCustIndex', faicon:'fa-plus-square'}"><li class="menulihover">我的缴费未治疗客户</li></a>
+                                            <a href="/ReturnCall/MySavecardCust/Index" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'MySavecardCustIndex', faicon:'fa-user'}"><li class="menulihover">我的储值客户</li></a>
+                                            <a href="/ReturnCall/MyDepositCust/Index" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'MyDepositCustIndex', faicon:'fa-user'}"><li class="menulihover">我的住院押金客户</li></a>
+                                            <a href="/Manage/MyDealCust/Index" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'MyDealCust', faicon:'fa-user'}"><li class="menulihover">我的成交客户</li></a>
+                                            <a href="/Manage/MyNoDealCust/Index" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'MyNoDealCust', faicon:'fa-user'}"><li class="menulihover">我的未成交客户</li></a>
+                                            <a href="/CustAnalysis/CustLabelConsumeQuery/FieldIndex" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'FieldIndex', faicon:'fa-user'}"><li class="menulihover">我的标签客户</li></a>
+                            </ul>
+                        </div>
+                    </fieldset>
+                </div>
             </div>
-        </fieldset>
-    </div>
-</div>
-<div style="clear: both;"></div>
-<div style="width: 33%;  padding: 10px; float: left">
-    <div style="height: 100%;">
-        <fieldset style="min-height: 250px; background: #e0f0fb;">
-            <legend style="font-size: 18px;">营销</legend>
-            <div id="layout-01" style="height: 90%; " class="bjui-layout">
-                <ul class="dl-horizontal unstyled">
-                    <a href="/Reservation/SalesInvestment/Index" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'SalesInvestmentIndex', faicon:'fa-'}">
-                        <li class="menulihover">营销投入录入</li></a>
-                </ul>
+ <div style="clear: both;"> </div>            <div style="width: 33%;  padding: 10px; float: left">
+                <div style="height: 100%;">
+                    <fieldset style="min-height: 250px; background: #e0f0fb;">
+                        <legend style="font-size: 18px;">客户管理(客户代表)</legend>
+                        <div id="layout-01" style="height: 90%; " class="bjui-layout">
+                            <ul class="dl-horizontal unstyled">
+                                            <a href="/Field/RepresentativeMyCust/Index" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'RepresentativeMyCustIndex', faicon:'fa-'}"><li class="menulihover">我的客户</li></a>
+                                            <a href="/Field/RepresentativePremoneyCust/Index" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'RepresentativePremoneyCustIndex', faicon:'fa-'}"><li class="menulihover">我的预约金用户</li></a>
+                                            <a href="/Field/RepresentativeMyWaitCareCust/Index" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'RepresentativeMyWaitCareCustIndex', faicon:'fa-'}"><li class="menulihover">我的缴费未治疗客户</li></a>
+                                            <a href="/Field/RepresentativeDebtCust/Index" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'RepresentativeDebtCustIndex', faicon:'fa-'}"><li class="menulihover">我的欠款客户</li></a>
+                                            <a href="/Field/RepresentativeSavecardCust/Index" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'RepresentativeSavecardCustIndex', faicon:'fa-'}"><li class="menulihover">我的储值用户</li></a>
+                                            <a href="/Field/RepresentativeDepositCust/Index" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'RepresentativeDepositCustIndex', faicon:'fa-'}"><li class="menulihover">我的住院押金客户</li></a>
+                                            <a href="/Field/RepresentativeDealCust/Index" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'RepresentativeDealCustIndex', faicon:'fa-'}"><li class="menulihover">我的成交客户</li></a>
+                                            <a href="/Field/RepresentativeNoDealCust/Index" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'RepresentativeNoDealCustIndex', faicon:'fa-'}"><li class="menulihover">我的未成交客户</li></a>
+                                            <a href="/CustAnalysis/CustLabelConsumeQuery/RepreIndex" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'RepreIndex', faicon:'fa-user'}"><li class="menulihover">我的标签客户</li></a>
+                            </ul>
+                        </div>
+                    </fieldset>
+                </div>
             </div>
-        </fieldset>
-    </div>
-</div>
+            <div style="width: 33%;  padding: 10px; float: left">
+                <div style="height: 100%;">
+                    <fieldset style="min-height: 250px; background: #e0f0fb;">
+                        <legend style="font-size: 18px;">预约看板</legend>
+                        <div id="layout-01" style="height: 90%; " class="bjui-layout">
+                            <ul class="dl-horizontal unstyled">
+                                            <a href="/Field/ReservationItemHospitalBoard/Index" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'ReservationItemHospitalBoardIndex', faicon:'fa-'}"><li class="menulihover">全院管理看板</li></a>
+                            </ul>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <div style="width: 33%;  padding: 10px; float: left">
+                <div style="height: 100%;">
+                    <fieldset style="min-height: 250px; background: #e0f0fb;">
+                        <legend style="font-size: 18px;">审批</legend>
+                        <div id="layout-01" style="height: 90%; " class="bjui-layout">
+                            <ul class="dl-horizontal unstyled">
+                                            <a href="/Field/ChargeBillFlow/ChargeBillFlowList" style=" text-decoration: none" data-toggle="navtab" data-options="{id:'ChargeBillFlowList', faicon:'fa-'}"><li class="menulihover">流程审批</li></a>
+                            </ul>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+
+
