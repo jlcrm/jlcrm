@@ -1,13 +1,17 @@
 <?php
 namespace app\index\controller;
 
-class Index
+class Menu
 {
     /**
      * @return \think\response\View
      */
     public function index()
     {
-    	return view();
-    }    
+      var_dump( input('post.menuGroupId')	 );
+    }
+    public function menu()
+    {
+      return view();
+    }
 }

@@ -9,9 +9,5 @@ class Index
     public function index()
     {
     	return view();
-    }
-    public function menu()
-    {
-    	return view();
-    }
+    }    
 }
