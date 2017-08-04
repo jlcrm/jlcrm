@@ -8,7 +8,7 @@ class Menu
      */
     public function index()
     {
-      var_dump( input('post.menuGroupId')	 );
+      var_dump( input('post.menuGroupId') );
     }
     public function menu()
     {
