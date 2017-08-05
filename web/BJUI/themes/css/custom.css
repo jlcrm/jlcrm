@@ -1,3 +1,4 @@
 .bjui-navbar-logo {color: #FFF;font-size: 24px;margin: 5px 0 0 5px;}
 .login_logo {font-size: 30px;}
 .main_box {height: 350px;margin-top:-200px;}
+a.bjui-navbar-logo:hover {color: #fff;text-decoration: none;}
