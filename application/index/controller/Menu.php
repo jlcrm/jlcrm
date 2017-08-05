@@ -1,6 +1,6 @@
 <?php
 namespace app\index\controller;
-use think\Model;
+
 class Menu
 {
     /**
@@ -8,10 +8,14 @@ class Menu
      */
     public function index()
     {
-    	//echo '加密:'.encrypt($str, 'E', $key); 
-		//echo '解密：'.encrypt($str, 'D', $key);
-    	$mm = model('common')->encrypt("12131",'E');
-    	echo model('common')->encrypt($mm,'D');
+    	$str = 'abc'; 
+		$key = 'www.helloweba.com'; 
+		$token = encrypt($str, 'E', $key); 
+		echo '加密:'.encrypt($str, 'E', $key);
+		echo "<br />--------------------------------------------------------------<br />";
+		echo '解密：'.encrypt($token, 'D', $key);
+		
+    	echo "<br />--------------------------------------------------------------<br />";
     	var_dump( input('post.menuGroupId') );
     }
     public function menu()
