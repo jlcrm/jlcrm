@@ -8,6 +8,10 @@ class Menu
      */
     public function index()
     {
+    	return view('menu'.input('post.menuGroupId'));
+    }
+    public function menu()
+    {
     	$str = 'abc'; 
 		$key = 'www.helloweba.com'; 
 		$token = encrypt($str, 'E', $key); 
@@ -17,9 +21,5 @@ class Menu
 		
     	echo "<br />--------------------------------------------------------------<br />";
     	var_dump( input('post.menuGroupId') );
-    }
-    public function menu()
-    {
-      return view();
     }
 }
