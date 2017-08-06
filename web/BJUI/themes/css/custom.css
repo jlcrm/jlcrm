@@ -4,6 +4,30 @@
 a.bjui-navbar-logo:hover {color: #fff;text-decoration: none;}
 legend {display: block;}
 
+/*创建预约单*/
+.searchresult{display: inline-block; height: 30px; float: right;}
+.toolbarlist240 {
+    white-space: nowrap;
+    display: inline-block;
+    width: 240px;
+    float: left;
+    height: 30px;
+    padding-bottom: 5px;
+}
+.tablehead {
+    padding: 10px;
+    background: #587fa1;
+    color: #FFF;
+    display: inline-block;
+    width: 100%;
+}
+.bgE0F0FB {
+    background: #E0F0FB;
+    padding: 0;
+    padding-top: 5px;
+}
+/*创建预约单*/
+
 .main_box{position: absolute;top: 50%;left: 50%;margin-top: -175px;margin-left: -300px;padding: 30px;width: 600px;height: 350px;background: #cae7ff;border: 1px #DDD solid;border-radius: 5px;-webkit-box-shadow: 1px 5px 8px #888888;-moz-box-shadow: 1px 5px 8px #888888;box-shadow: 1px 5px 8px #888888;}
 .main_box .setting{position: absolute;top: 5px;right: 10px;width: 10px;height: 10px;}
 .main_box .setting a{color: #FF6600;}

@@ -1,0 +1,139 @@
+
+<script type="text/javascript">
+   /* (function () {
+        if (window.location.pathname && window.location.pathname !== '/') {
+            window.location.replace('http://' + window.location.host + '#' + window.location.pathname.substring(1));
+        }
+    })();*/
+</script>
+
+
+
+
+
+<div class="bjui-pageHeader bgE0F0FB">
+<form action="/wdgl/tempCustInfo" data-toggle="ajaxsearch" id="TempCustInfosearch" method="get" style="display: inline-block; width:100%;">        <div style="padding: 5px;">
+            <div class="toolbarlist240"><label>电话：</label><input data-rule="mobile;required;" id="Phones" name="Phone" onchange="TempCustInfophones();" size="16" type="text" value="" /></div>
+            <div class="searchresult">
+                    <button type="button" class="btn-default " data-icon="plus-square" style="float: right;" disabled id="TempAdd" onclick="TempCustInfonavtab(this);">建档</button>
+                <button type="submit" class="btn-default" data-icon="search" style="float: right; margin-right: 10px;">搜索</button>&nbsp;
+            </div>
+        </div>
+</form>    <div class="tablehead">
+        <div style="display: inline-block; float: left;">
+            网电预约
+            &nbsp;&nbsp;
+            <i class="fa fa-square" style="color: #C6F9C3"></i>&nbsp;正式客户&nbsp;&nbsp;
+        </div>
+        <div style="display: inline-block; float: right; margin-top: -5px;">
+            <button type="button" class="btn btn-blue" data-icon="fa-plus-square" onclick="TempCustAddReservation()">添加预约</button>
+
+        </div>
+    </div>
+</div>
+
+<div class="bjui-pageContent tableContent ">
+    <table class="table table-bordered table-hover" data-width="100%" data-nowrap="true">
+        <thead>
+            <tr>
+                <th style="width: 8px;">
+                    <input type="checkbox" class="checkboxCtrl" data-group="ids" onclick="checkall(this);" />
+                </th>
+                <th>序号</th>
+                <th>建档人</th>
+                <th>建档时间</th>
+                <th>客户姓名</th>
+                <th>是否正式客户</th>
+                <th>来院时间</th>
+                <th>网电咨询师</th>
+                <th>网电回访人</th>
+                <th>现场咨询师</th>
+                <th>是否黑名单</th>
+                <th>预约时间</th>
+                <th>预约状态</th>
+                <th>意向度</th>
+                <th>组织</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+</div>
+
+    <script type="text/javascript">
+        function TempCustInfophones() {
+            $.CurrentNavtab.find("#TempAdd").attr("disabled", true);
+        }
+
+        function TempCustInfonavtaborgid(obj) {
+            var phone = $.CurrentNavtab.find("input[name='Phone']").val();
+            $(obj).navtab({
+                id: 'ReservationTempCustInfoIndexorgid_Add',
+                title: '临客建档',
+                url: '/Reservation/TempCustInfo/TempOrgCreate',
+                data: {
+                    "phone": phone
+                }
+            });
+        }
+
+        function TempCustInfonavtab(obj) {
+            var phone = $.CurrentNavtab.find("input[name='Phone']").val();
+            $(obj).navtab({
+                id: 'ReservationTempCustInfoIndex_Add',
+                title: '临客建档',
+                url: '/Reservation/TempCustInfo/Create',
+                data: {
+                    "phone": phone
+                }
+            });
+        }
+
+        function TempCustAddReservation() {
+
+            if ($.CurrentNavtab.find("input[name='ids']:checked").length > 1)
+                $(this).alertmsg('error', '选择数量超过1个！');
+            else if ($.CurrentNavtab.find("input[name='ids']:checked").length === 0)
+                $(this).alertmsg('error', '未选择！');
+            else {
+                var name = $.CurrentNavtab.find("input[name='ids']:checked").attr("data-name");
+                var isReservation = $.CurrentNavtab.find("input[name='ids']:checked").attr("data-IsReservation");
+                if (isReservation == "N") {
+                    var is = $.CurrentNavtab.find("input[name='ids']:checked").attr("data-isregularcust");
+                    if (is === "Y") {
+                        $(this).alertmsg('error', '正式客户不能在这里预约');
+                    } else {
+
+                        var phone = $.CurrentNavtab.find("input[name='ids']:checked").attr("data-phone");
+                        var id = $.CurrentNavtab.find("input[name='ids']:checked").val();
+
+
+                        var url = '/Reservation/TempCustInfo/CreateTempNote';
+
+                        $(this).navtab({
+                            id: 'ReservationTempCustInfoNote_Add',
+                            title: name + '_新建预约',
+                            url: url,
+                            data: {
+                                "phone": phone,
+                                "id": id
+                            }
+                        });
+                    }
+                } else {
+                    $(this).alertmsg('error', '当前有预约，不可以添加预约');
+                }
+            }
+
+        }
+        var TempCustInfophonePaste = function (e) {
+            e.preventDefault(); //可以阻止默认粘贴
+            var text = (e.originalEvent || e).clipboardData.getData('text/plain');
+            $.CurrentNavtab.find("input[name='Phone']").val(text.trim());
+        }
+        document.getElementById("Phones").addEventListener("paste", TempCustInfophonePaste);
+    </script>
+
+
