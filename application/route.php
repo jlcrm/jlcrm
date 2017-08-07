@@ -8,6 +8,13 @@
 // +----------------------------------------------------------------------
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
+use think\Route;
+
+// 绑定当前的URL到 index模块
+Route::bind('index');
+// 绑定命名空间
+//Route::bind('\app\index\controller','namespace');
+
 
 return [
     '__pattern__' => [
